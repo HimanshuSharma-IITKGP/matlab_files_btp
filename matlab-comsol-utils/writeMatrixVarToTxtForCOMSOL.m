@@ -1,4 +1,4 @@
-function [] = writeMatrixVarToTxtForCOMSOL(varName, varValues)
+function [] = writeMatrixVarToTxtForCOMSOL(varName, varValues, fileName)
     % fid = fopen(varName+"_mat.txt", 'w' );
 
     % for i=1:3
@@ -16,8 +16,8 @@ function [] = writeMatrixVarToTxtForCOMSOL(varName, varValues)
         end
     end
 
-    data = [reshape(varNames, 9, 1), reshape(varValues, 9, 1)] ;
-    writematrix(data, varName+"_mat.txt")
+    data = [string(reshape(varNames, 9, 1)), string(reshape(varValues, 9, 1))] ;
+    writematrix(data, fileName)
     % fclose(fid);
 
 end
