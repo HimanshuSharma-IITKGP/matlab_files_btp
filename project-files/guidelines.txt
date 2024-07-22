@@ -1,0 +1,8 @@
+First do all the calculation in tensor form on paper, using books and research papers.
+Then use MATLAB to generate component wise equations.
+Do the non-dimensionalisation on paper again.
+Then use MATALB to generate those component wise equations.
+Export .tex files from MATLAB containing the equations.
+convert that raw .tex so that it includes new macro definitions. This makes the LaTeX look more elegant.
+
+steps 5 and 6 can be combined to make one single function to do that.

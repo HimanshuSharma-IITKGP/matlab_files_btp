@@ -1,21 +1,25 @@
-function [] = writeMatrixVarToTexForLaTeX(varName, varValues)
+function [] = writeMatrixVarToTexForLaTeX(varName, varValues, fileName)
+    
+    varNameLaTeX = varName;
 
-
+    if(varName == "sigma" || varName == "tau")
+        varNameLaTeX = "\" + varName;
+    end
     varNames = strings(3, 3);
     varValuesLaTeX = strings(3, 3);
 
     for i=1:3
         for j=1:3
-            varNames(i, j) = strcat(varName,"_{", string(i), string(j), '}');
+            varNames(i, j) = strcat(varNameLaTeX,"_{", string(i), string(j), '}');
             varValuesLaTeX(i, j) = latex(varValues(i, j));
         end
     end
 
   
-    outfile = varName + "_mat.tex";
+ 
 
     data = [reshape(varNames, 9, 1), reshape(varValuesLaTeX, 9, 1)] ;
-    fid = fopen(outfile, 'w');
+    fid = fopen(fileName, 'w');
     
   
     fprintf(fid, "\\begin{align}\n");
