@@ -1,10 +1,6 @@
-function [] = writeMatrixVarToTexForLaTeX(varName, varValues, fileName)
+function [] = writeMatrixVarToTexForLaTeX(varNameLaTeX, varValues, fileName)
     
-    varNameLaTeX = varName;
 
-    if(varName == "sigma" || varName == "tau")
-        varNameLaTeX = "\" + varName;
-    end
     varNames = strings(3, 3);
     varValuesLaTeX = strings(3, 3);
 
@@ -19,6 +15,7 @@ function [] = writeMatrixVarToTexForLaTeX(varName, varValues, fileName)
  
 
     data = [reshape(varNames, 9, 1), reshape(varValuesLaTeX, 9, 1)] ;
+
     fid = fopen(fileName, 'w');
     
   
