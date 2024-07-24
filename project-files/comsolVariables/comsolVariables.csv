@@ -1,80 +1,34 @@
-Eel11,Fel11^2/2 + Fel21^2/2 - 1/2
-Eel12,(Fel11*Fel12)/2 + (Fel21*Fel22)/2
-Eel21,(Fel11*Fel12)/2 + (Fel21*Fel22)/2
-Eel22,Fel12^2/2 + Fel22^2/2 - 1/2
-Eel33,Fel33^2/2 - 1/2
-Fel11,(F11*lambda22 - F12*lambda21)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel12,-(F11*lambda12 - F12*lambda11)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel21,(F21*lambda22 - F22*lambda21)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel22,-(F21*lambda12 - F22*lambda11)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel33,1/(Jc^(1/3)*lambda33)
-Fpdot11,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel11*lambda11)/(2*J*sigmaeff) + (3*Mel12*lambda21)/(2*J*sigmaeff))
-Fpdot12,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel11*lambda12)/(2*J*sigmaeff) + (3*Mel12*lambda22)/(2*J*sigmaeff))
-Fpdot21,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel21*lambda11)/(2*J*sigmaeff) + (3*Mel22*lambda21)/(2*J*sigmaeff))
-Fpdot22,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel21*lambda12)/(2*J*sigmaeff) + (3*Mel22*lambda22)/(2*J*sigmaeff))
-Fpdot33,(3*Mel33*ddot0*lambda33*(sigmaeff/sigmaf - 1)^m)/(2*J*sigmaeff)
+E11el,F11el^2/2 + F21el^2/2 - 1/2
+E12el,(F11el*F12el)/2 + (F21el*F22el)/2
+E21el,(F11el*F12el)/2 + (F21el*F22el)/2
+E22el,F12el^2/2 + F22el^2/2 - 1/2
+E33el,F33el^2/2 - 1/2
+F11el,(F11*lambda22 - F12*lambda21)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
+F12el,-(F11*lambda12 - F12*lambda11)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
+F21el,(F21*lambda22 - F22*lambda21)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
+F22el,-(F21*lambda12 - F22*lambda11)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
+F33el,1/(Jc^(1/3)*lambda33)
+Fpdot11,ddot0*(sigmaeff/sigmaf - 1)^m*((3*M11el*lambda11)/(2*J*sigmaeff) + (3*M12el*lambda21)/(2*J*sigmaeff))
+Fpdot12,ddot0*(sigmaeff/sigmaf - 1)^m*((3*M11el*lambda12)/(2*J*sigmaeff) + (3*M12el*lambda22)/(2*J*sigmaeff))
+Fpdot21,ddot0*(sigmaeff/sigmaf - 1)^m*((3*M21el*lambda11)/(2*J*sigmaeff) + (3*M22el*lambda21)/(2*J*sigmaeff))
+Fpdot22,ddot0*(sigmaeff/sigmaf - 1)^m*((3*M21el*lambda12)/(2*J*sigmaeff) + (3*M22el*lambda22)/(2*J*sigmaeff))
+Fpdot33,(3*M33el*ddot0*lambda33*(sigmaeff/sigmaf - 1)^m)/(2*J*sigmaeff)
 J,F11*F22 - F12*F21
-Eel11,Fel11^2/2 + Fel21^2/2 - 1/2
-Eel12,(Fel11*Fel12)/2 + (Fel21*Fel22)/2
-Eel21,(Fel11*Fel12)/2 + (Fel21*Fel22)/2
-Eel22,Fel12^2/2 + Fel22^2/2 - 1/2
-Eel33,Fel33^2/2 - 1/2
-Fel11,(F11*lambda22 - F12*lambda21)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel12,-(F11*lambda12 - F12*lambda11)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel21,(F21*lambda22 - F22*lambda21)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel22,-(F21*lambda12 - F22*lambda11)/(Jc^(1/3)*(lambda11*lambda22 - lambda12*lambda21))
-Fel33,F33/(Jc^(1/3)*lambda33)
-Fpdot11,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel11*lambda11)/(2*J*sigmaeff) + (3*Mel12*lambda21)/(2*J*sigmaeff))
-Fpdot12,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel11*lambda12)/(2*J*sigmaeff) + (3*Mel12*lambda22)/(2*J*sigmaeff))
-Fpdot21,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel21*lambda11)/(2*J*sigmaeff) + (3*Mel22*lambda21)/(2*J*sigmaeff))
-Fpdot22,ddot0*(sigmaeff/sigmaf - 1)^m*((3*Mel21*lambda12)/(2*J*sigmaeff) + (3*Mel22*lambda22)/(2*J*sigmaeff))
-Fpdot33,(3*Mel33*ddot0*lambda33*(sigmaeff/sigmaf - 1)^m)/(2*J*sigmaeff)
-J,F11*F22*F33 - F12*F21*F33
-Mel11,-(J*(Fel11*Fel12*tau12 - Fel11*Fel22*tau11 + Fel12*Fel21*tau22 - Fel21*Fel22*tau21))/(Fel11*Fel22 - Fel12*Fel21)
-Mel12,(J*(Fel11^2*tau12 - Fel21^2*tau21 - Fel11*Fel21*tau11 + Fel11*Fel21*tau22))/(Fel11*Fel22 - Fel12*Fel21)
-Mel21,-(J*(Fel12^2*tau12 - Fel22^2*tau21 - Fel12*Fel22*tau11 + Fel12*Fel22*tau22))/(Fel11*Fel22 - Fel12*Fel21)
-Mel22,(J*(Fel11*Fel12*tau12 - Fel12*Fel21*tau11 + Fel11*Fel22*tau22 - Fel21*Fel22*tau21))/(Fel11*Fel22 - Fel12*Fel21)
-Mel33,J*tau33
-P11,F11*S11 + F12*S21
-P12,F11*S12 + F12*S22
-P21,F21*S11 + F22*S21
-P22,F21*S12 + F22*S22
-P33,F33*S33
-Sel11,Jc*(2*E11el*musi + lambdasi*(E11el + E22el + E33el))
-Sel12,2*E12el*Jc*musi
-Sel21,2*E21el*Jc*musi
-Sel22,Jc*(2*E22el*musi + lambdasi*(E11el + E22el + E33el))
-Sel33,Jc*(2*E33el*musi + lambdasi*(E11el + E22el + E33el))
-sigma11,(F11*P11 + F12*P12)/J
-sigma12,(F21*P11 + F22*P12)/J
-sigma21,(F11*P21 + F12*P22)/J
-sigma22,(F21*P21 + F22*P22)/J
-sigma33,(F33*P33)/J
-S11,(S11el*lambda22^2 + S22el*lambda12^2 - S12el*lambda12*lambda22 - S21el*lambda12*lambda22)/(Jc^(2/3)*(lambda11*lambda22 - lambda12*lambda21)^2)
-S12,(S12el*lambda11*lambda22 - S22el*lambda11*lambda12 - S11el*lambda21*lambda22 + S21el*lambda12*lambda21)/(Jc^(2/3)*(lambda11*lambda22 - lambda12*lambda21)^2)
-S21,(S12el*lambda12*lambda21 - S22el*lambda11*lambda12 - S11el*lambda21*lambda22 + S21el*lambda11*lambda22)/(Jc^(2/3)*(lambda11*lambda22 - lambda12*lambda21)^2)
-S22,(S11el*lambda21^2 + S22el*lambda11^2 - S12el*lambda11*lambda21 - S21el*lambda11*lambda21)/(Jc^(2/3)*(lambda11*lambda22 - lambda12*lambda21)^2)
-S33,S33el/(Jc^(2/3)*lambda33^2)
-tau11,(2*sigma11)/3 - sigma22/3 - sigma33/3
-tau12,sigma12
-tau21,sigma21
-tau22,(2*sigma22)/3 - sigma11/3 - sigma33/3
-tau33,(2*sigma33)/3 - sigma22/3 - sigma11/3
-Mel11,-(J*(Fel11*Fel12*tau12 - Fel11*Fel22*tau11 + Fel12*Fel21*tau22 - Fel21*Fel22*tau21))/(Fel11*Fel22 - Fel12*Fel21)
-Mel12,(J*(Fel11^2*tau12 - Fel21^2*tau21 - Fel11*Fel21*tau11 + Fel11*Fel21*tau22))/(Fel11*Fel22 - Fel12*Fel21)
-Mel21,-(J*(Fel12^2*tau12 - Fel22^2*tau21 - Fel12*Fel22*tau11 + Fel12*Fel22*tau22))/(Fel11*Fel22 - Fel12*Fel21)
-Mel22,(J*(Fel11*Fel12*tau12 - Fel12*Fel21*tau11 + Fel11*Fel22*tau22 - Fel21*Fel22*tau21))/(Fel11*Fel22 - Fel12*Fel21)
-Mel33,J*tau33
+M11el,-(J*(F11el*F12el*tau12 - F11el*F22el*tau11 + F12el*F21el*tau22 - F21el*F22el*tau21))/(F11el*F22el - F12el*F21el)
+M12el,(J*(F11el^2*tau12 - F21el^2*tau21 - F11el*F21el*tau11 + F11el*F21el*tau22))/(F11el*F22el - F12el*F21el)
+M21el,-(J*(F12el^2*tau12 - F22el^2*tau21 - F12el*F22el*tau11 + F12el*F22el*tau22))/(F11el*F22el - F12el*F21el)
+M22el,(J*(F11el*F12el*tau12 - F12el*F21el*tau11 + F11el*F22el*tau22 - F21el*F22el*tau21))/(F11el*F22el - F12el*F21el)
+M33el,J*tau33
 P11,F11*S11 + F12*S21
 P12,F11*S12 + F12*S22
 P21,F21*S11 + F22*S21
 P22,F21*S12 + F22*S22
 P33,S33
-Sel11,Jc*(2*E11el*musi + lambdasi*(E11el + E22el + E33el))
-Sel12,2*E12el*Jc*musi
-Sel21,2*E21el*Jc*musi
-Sel22,Jc*(2*E22el*musi + lambdasi*(E11el + E22el + E33el))
-Sel33,Jc*(2*E33el*musi + lambdasi*(E11el + E22el + E33el))
+S11el,Jc*(2*E11el*musi + lambdasi*(E11el + E22el + E33el))
+S12el,2*E12el*Jc*musi
+S21el,2*E21el*Jc*musi
+S22el,Jc*(2*E22el*musi + lambdasi*(E11el + E22el + E33el))
+S33el,Jc*(2*E33el*musi + lambdasi*(E11el + E22el + E33el))
 sigma11,(F11*P11 + F12*P12)/J
 sigma12,(F21*P11 + F22*P12)/J
 sigma21,(F11*P21 + F12*P22)/J

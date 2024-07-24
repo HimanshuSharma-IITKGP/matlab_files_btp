@@ -6,7 +6,12 @@ function [] = writeMatrixVarToCsvForCOMSOL(varName, varValues, fileName)
     for i=1:3
         for j=1:3
             if(varValues(i, j) ~= '0')
-                varName_ij = strcat(varName,"_", string(i), string(j));
+                
+                varName_ij = strcat(varName, string(i), string(j)); % of the form Fij
+
+                if(contains(varName, "el"))
+                    varName_ij = strcat(extractBetween(varName, 1, strlength(varName)-2), string(i), string(j), "el"); % of the form Fijel
+                end
 
                 data(count, 1) = varName_ij;
                 data(count, 2) = varValues(i, j);
